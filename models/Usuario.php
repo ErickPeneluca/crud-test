@@ -23,6 +23,7 @@ class Usuario {
 interface UsuarioDAO{
     public function add(Usuario $u);
     public function findById($id);
+    public function findByName($name);
     public function update(Usuario $u);
     public function delete($id);
 }
