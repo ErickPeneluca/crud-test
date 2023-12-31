@@ -19,3 +19,10 @@ class Usuario {
         $this->nome = ucwords(trim($name));
     }
 }
+
+interface UsuarioDAO{
+    public function add(Usuario $u);
+    public function findById($id);
+    public function update(Usuario $u);
+    public function delete($id);
+}

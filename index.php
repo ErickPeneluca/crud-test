@@ -1,12 +1,10 @@
 <?php
 require 'config.php';
-$sql = $pdo->query('SELECT * FROM usuarios');
+require 'dao/UsuarioDaoMySql.php';
 
-$lista = [];
+$usuarioDao = new UsuarioDaoMysql($pdo);
+$lista = $usuarioDao->findAll();
 
-if ($sql->rowCount() > 0) {
-    $lista = $sql->fetchAll( PDO::FETCH_ASSOC);   
-}
 ?>
 
 <a href="adicionar.php">ADICIONAR USUARIO</a>
@@ -18,12 +16,12 @@ if ($sql->rowCount() > 0) {
     </tr>
     <?php foreach($lista as $row): ?>
         <tr>
-            <td style="text-align: center;"><?=$row['id'];?></td>
-            <td style="text-align: center;"><?=$row['nome']?></td>
+            <td style="text-align: center;"><?=$row->getId();?></td>
+            <td style="text-align: center;"><?=$row->getNome()?></td>
             <td style="display: flex; align-items:center;">
-                 <a href="edit.php?id=<?=$row['id'];?>"> [editar] </a>
+                 <a href="edit.php?id=<?=$row->getId();?>"> [editar] </a>
                  &nbsp; &nbsp;
-                 <a href="delete.php?id=<?=$row['id'];?>"> [excluir] </a>
+                 <a href="delete.php?id=<?=$row->getId();?>"> [excluir] </a>
             </td>
         </tr>
    <?php endforeach; ?>
