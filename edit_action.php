@@ -13,13 +13,6 @@ if ($name && $id) {
 
     $usuarioDao->update( $usuario );
 
-    $usuarioDao->update($usuario);
-
-    $sql = $pdo->prepare("UPDATE usuarios SET nome = :name WHERE id = :id ");
-    $sql->bindValue(":name",$name);
-    $sql->bindValue(":id",$id);
-    $sql->execute();
-
     header("Location: index.php");
     exit;
     
