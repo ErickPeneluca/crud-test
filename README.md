@@ -1,6 +1,5 @@
 # Projeto PHP CRUD com PDO
-Este é um pequeno projeto em PHP que implementa um CRUD (Create, Read, Update, Delete) simples utilizando o PDO (PHP Data Objects) para interagir com um banco de dados. O projeto foi desenvolvido sem o uso de programação orientada a objetos (POO), mantendo uma abordagem procedural.
-
+Este é um pequeno projeto em PHP que implementa um CRUD (Create, Read, Update, Delete) simples utilizando o PDO (PHP Data Objects) para interagir com um banco de dados. 
 ## Configuração do Ambiente
 Certifique-se de ter um ambiente PHP configurado e um servidor de banco de dados MySQL disponível. Edite o arquivo config.php com as configurações adequadas para o seu ambiente:
 
